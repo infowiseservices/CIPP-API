@@ -1,6 +1,6 @@
 param($TableParams)
 $TableName = ($TableParams.Context['TableName'])
-$Table = Get-CippTable -tablename $TableName
+$Table = Get-CippTable -tablename $TableName 
 
 foreach ($param in $TableParams.Entity) {
   try {
