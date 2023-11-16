@@ -9,15 +9,15 @@ Set-Location (Get-Item $PSScriptRoot).Parent.FullName
 
 $Table = Get-CippTable -tablename 'templates'
 
-$Templates = Get-ChildItem 'Config\*.IntuneTemplate.json' | ForEach-Object {
-    $Entity = @{
-        JSON         = "$(Get-Content $_)"
-        RowKey       = "$($_.name)"
-        PartitionKey = 'IntuneTemplate'
-        GUID         = "$($_.name)"
-    }
-    Add-CIPPAzDataTableEntity @Table -Entity $Entity -Force
-}
+# $Templates = Get-ChildItem 'Config\*.IntuneTemplate.json' | ForEach-Object {
+#     $Entity = @{
+#         JSON         = "$(Get-Content $_)"
+#         RowKey       = "$($_.name)"
+#         PartitionKey = 'IntuneTemplate'
+#         GUID         = "$($_.name)"
+#     }
+#     Add-CIPPAzDataTableEntity @Table -Entity $Entity -Force
+# }
 
 #List new policies
 $Table = Get-CippTable -tablename 'templates'
